@@ -1,6 +1,7 @@
 import CurrencyRouletteGame
 import MemoryGame
 import GuessGame
+import Score
 win_or_lose = 0
 
 
@@ -65,7 +66,7 @@ def load_game():
         # print(win_or_lose), value of win_or_lose is the difficulty
         if win_or_lose > 0:
             print(win_or_lose)
-
+            Score.add_score(int(difficulty))
     else:
         pass
 
