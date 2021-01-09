@@ -1,4 +1,5 @@
 import random
+import Live
 
 user_numbers_picked = []
 random_numbers_list = []
@@ -35,9 +36,10 @@ def get_list_from_user():
                 print("not a number, try again: ")
 
 
-def is_list_equal():
+def is_list_equal(diff):
     if set(str(random_numbers_list)) == set(str(user_numbers_picked)):
         print("i won")
+        Live.win_or_lose = diff
         return True
     else:
         print("i lost")
@@ -53,7 +55,7 @@ def play(diff):
     get_list_from_user()
     # print(user_numbers_picked)
     # compare the two lists na return true or false
-    is_list_equal()
+    is_list_equal(diff)
     # print(is_list_equal())
 
 # play()

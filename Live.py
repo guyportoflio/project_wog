@@ -1,6 +1,7 @@
 import CurrencyRouletteGame
 import MemoryGame
 import GuessGame
+win_or_lose = 0
 
 
 def welcome(name):
@@ -50,10 +51,21 @@ def load_game():
     if int(res) == 1:
         print("memory")
         MemoryGame.play(int(difficulty))
+        # print(win_or_lose), value of win_or_lose is the difficulty
+        if win_or_lose > 0:
+            print(win_or_lose)
     elif int(res) == 2:
         GuessGame.play(int(difficulty))
+        # print(win_or_lose), value of win_or_lose is the difficulty
+        if win_or_lose > 0:
+            print(win_or_lose)
     elif int(res) == 3:
         print("currency")
         CurrencyRouletteGame.play(int(difficulty))
+        # print(win_or_lose), value of win_or_lose is the difficulty
+        if win_or_lose > 0:
+            print(win_or_lose)
+
     else:
         pass
+

@@ -1,5 +1,7 @@
 import random
 
+import Live
+
 
 def generate_number(difficulty):
     global secret_number
@@ -27,10 +29,11 @@ def get_guess_from_user(difficulty):
     return user_number_guess
 
 
-def compare_results():
+def compare_results(diff):
     global win_or_lose
     if int(user_number_guess) == secret_number:
         win_or_lose = True
+        Live.win_or_lose = diff
         print("i win")
     else:
         win_or_lose = False
@@ -42,7 +45,5 @@ def play(diff):
     generate_number(diff)
     # print(secret_number)
     get_guess_from_user(diff)
-    compare_results()
+    compare_results(diff)
     print(win_or_lose)
-
-

@@ -1,7 +1,7 @@
 import random
 from urllib.request import urlopen
 import json
-
+import Live
 random_generated_number = random.randint(1, 100)
 # currency api key: 14451ac9f9e3c2e1a8f3905246acb717
 url2 = urlopen("http://apilayer.net/api/live?access_key=14451ac9f9e3c2e1a8f3905246acb717&currencies=ILS")
@@ -17,9 +17,11 @@ def play(diff):
     get_guess_from_user()
     if low_range <= user_guess <= high_range:
         print("win")
+        Live.win_or_lose = diff
         return True
     else:
         print("lose")
+        Live.win_or_lose = 0
         return False
 
 
